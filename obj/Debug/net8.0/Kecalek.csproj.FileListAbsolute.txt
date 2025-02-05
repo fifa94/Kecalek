@@ -66,3 +66,5 @@
 /home/filip/Documents/Kecalek/obj/Debug/net8.0/Kecalek.csproj.CopyComplete
 /home/filip/Documents/Kecalek/obj/Debug/net8.0/Kecalek.genruntimeconfig.cache
 /home/filip/Documents/Kecalek/obj/Debug/net8.0/ref/Kecalek.dll
+/home/filip/Documents/Kecalek/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.dll
+/home/filip/Documents/Kecalek/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll

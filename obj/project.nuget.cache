@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dnSrSN4J4bG/AWav/u0NIqLJ7uSd3SYcYmCzwDR0hiFfq99O9IrLhdwmeSzIWkH4NXRCfSeQWl0O28yatjteGw==",
+  "dgSpecHash": "alAki/4VCdF2CUV17kUFrw85XhBZEl0mq/YjhOxmhCXMMIgvU75k6Jld9xtJb6BAjKQVPUtDdLrhG8+v59jQzw==",
   "success": true,
   "projectFilePath": "/home/filip/Documents/Kecalek/Kecalek.csproj",
   "expectedPackageFiles": [
@@ -26,6 +26,8 @@
     "/home/filip/.nuget/packages/harfbuzzsharp.nativeassets.webassembly/7.3.0.3-preview.2.2/harfbuzzsharp.nativeassets.webassembly.7.3.0.3-preview.2.2.nupkg.sha512",
     "/home/filip/.nuget/packages/harfbuzzsharp.nativeassets.win32/7.3.0.2/harfbuzzsharp.nativeassets.win32.7.3.0.2.nupkg.sha512",
     "/home/filip/.nuget/packages/microcom.runtime/0.11.0/microcom.runtime.0.11.0.nupkg.sha512",
+    "/home/filip/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.1/microsoft.extensions.dependencyinjection.9.0.1.nupkg.sha512",
+    "/home/filip/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.1/microsoft.extensions.dependencyinjection.abstractions.9.0.1.nupkg.sha512",
     "/home/filip/.nuget/packages/skiasharp/2.88.8/skiasharp.2.88.8.nupkg.sha512",
     "/home/filip/.nuget/packages/skiasharp.nativeassets.linux/2.88.8/skiasharp.nativeassets.linux.2.88.8.nupkg.sha512",
     "/home/filip/.nuget/packages/skiasharp.nativeassets.macos/2.88.8/skiasharp.nativeassets.macos.2.88.8.nupkg.sha512",

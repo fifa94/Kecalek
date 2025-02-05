@@ -25,6 +25,8 @@
 /home/filip/.nuget/packages/harfbuzzsharp/7.3.0.2/lib/net6.0/HarfBuzzSharp.dll
 /home/filip/.nuget/packages/microcom.runtime/0.11.0/lib/net5.0/MicroCom.Runtime.dll
 /usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.12/ref/net8.0/Microsoft.CSharp.dll
+/home/filip/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.1/lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/home/filip/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.1/lib/net8.0/Microsoft.Extensions.DependencyInjection.dll
 /usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.12/ref/net8.0/Microsoft.VisualBasic.Core.dll
 /usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.12/ref/net8.0/Microsoft.VisualBasic.dll
 /usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/8.0.12/ref/net8.0/Microsoft.Win32.Primitives.dll
