@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Kecalek")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c74a36e2d478b5bdf6527373d9119011ea1b324")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b5ba6dae856e06034d5d3236297fd55be5e3455")]
 [assembly: System.Reflection.AssemblyProductAttribute("Kecalek")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Kecalek")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

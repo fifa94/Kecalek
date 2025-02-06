@@ -16,10 +16,11 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
-        Console.WriteLine("PRED");
+        Console.WriteLine("Before connection to server");
 
         var protocol = new TcpClientService("127.0.0.1", 123);
         var communicationService = new Kecalek.Services.Communication(protocol);
+        communicationService.connectToServer();
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {

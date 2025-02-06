@@ -1,0 +1,48 @@
+# Prvotní sestavení
+bin/
+obj/
+
+# Konfigurace uživatele VS Code
+.vscode/
+
+# Výstupní soubory sestavení
+*.exe
+*.dll
+*.pdb
+*.app
+*.appxbundle
+*.msix
+*.msixbundle
+*.nupkg
+*.snupkg
+*.vspx
+*.vspx_json
+*.vsps
+*.vspf
+*.vspx_summary
+
+# Závislosti NuGet
+packages/
+project.lock.json
+
+# Uživatelská konfigurace MonoDevelop
+*.userprefs
+
+# ASP.NET
+*.dbmdl
+*.log
+
+# Rider IDE
+.idea/
+
+# Testovací výsledky
+TestResults/
+
+# Lokální konfigurační soubory
+appsettings.*.json
+
+# Docker
+**/docker-compose.override.yml
+
+# Debugging
+.vs/
