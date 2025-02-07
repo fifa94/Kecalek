@@ -1,31 +1,68 @@
-
 using System;
-using System.Runtime.CompilerServices;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Kecalek.Services
 {
-    public class Communication
+    public class CommunicationManager
     {
-        /*===================
-        Public
-        ===================*/
-        public bool isConnected { get; set; }
-        /*===================
-        Private
-        ===================*/
-        private readonly ICommunicationProtocol _protocol;
+        public bool IsConnected { get; private set; }
+        private ICommunicationProtocol _protocol;
+        private int _retryIntervalMilliseconds;
+        private CancellationTokenSource _cancellationTokenSource;
 
-        public Communication(ICommunicationProtocol protocol)
+        public event Action<bool> ConnectionStatusChanged;
+
+        public CommunicationManager(ICommunicationProtocol protocol)
         {
-            Console.WriteLine("Communication class constructor");
             _protocol = protocol;
         }
 
-        public void connectToServer()
+        public void ConnectToServer(int retryIntervalMilliseconds)
         {
-            _protocol.ConnectAsync();
+            _retryIntervalMilliseconds = retryIntervalMilliseconds;
+            _cancellationTokenSource = new CancellationTokenSource();
+            Task.Run(() => TryConnectLoop(_cancellationTokenSource.Token));
+        }
 
-            isConnected = _protocol.isConnected;
+        private async Task TryConnectLoop(CancellationToken cancellationToken)
+        {
+            while (!cancellationToken.IsCancellationRequested)
+            {
+                if (IsConnected) return;
+
+                try
+                {
+                    await _protocol.ConnectAsync();
+                    IsConnected = _protocol.isConnected;
+                    ConnectionStatusChanged?.Invoke(IsConnected);
+
+                    if (IsConnected)
+                    {
+                        Console.WriteLine("Připojení úspěšné!");
+                        return;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Pokus o pripojeni neuspesny, zkousim znovu za {_retryIntervalMilliseconds} ms");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Chyba při pokusu o připojení: {ex.Message}");
+                    IsConnected = false;
+                    ConnectionStatusChanged?.Invoke(IsConnected);
+                }
+
+                await Task.Delay(_retryIntervalMilliseconds, cancellationToken);
+            }
+        }
+
+        public void StopConnecting()
+        {
+            _cancellationTokenSource?.Cancel();
+            IsConnected = false;
+            ConnectionStatusChanged?.Invoke(IsConnected);
         }
     }
 }

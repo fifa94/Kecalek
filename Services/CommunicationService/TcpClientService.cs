@@ -1,20 +1,22 @@
 using System;
 using System.Net.Sockets;
-using System.Text;
+using System.Security;
 using System.Threading.Tasks;
 
 public interface ICommunicationProtocol
 {
-    void ConnectAsync();
+    Task ConnectAsync();
     string GetMessage();
-    public bool isConnected { get; set; }
+    bool isConnected { get; }
+    void Disconnect();
 }
+
 public class TcpClientService : ICommunicationProtocol
 {
     /*===================
     Public
     ===================*/
-    public bool isConnected{ get; set; }
+    public bool isConnected { get; private set; }
 
     /*===================
     Private
@@ -23,11 +25,6 @@ public class TcpClientService : ICommunicationProtocol
     private readonly int _port;
     private TcpClient _client;
     private NetworkStream _stream;
-  
-    public string GetMessage()
-    {
-        return "Ahoj";
-    }
 
     public TcpClientService(string ipAddress, int port)
     {
@@ -35,7 +32,12 @@ public class TcpClientService : ICommunicationProtocol
         _port = port;
     }
 
-    public async void ConnectAsync()
+    public string GetMessage()
+    {
+        return "Ahoj";
+    }
+
+    public async Task ConnectAsync()
     {
         try
         {
@@ -50,7 +52,15 @@ public class TcpClientService : ICommunicationProtocol
         {
             isConnected = false;
             Console.WriteLine($"Connection failure: {ex.Message}");
+            Disconnect();
         }
     }
-}
 
+    public void Disconnect()
+    {
+        _stream?.Close();
+        _client?.Close();
+        isConnected = false;
+        Console.WriteLine("Disconnected from server.");
+    }
+}
