@@ -46,3 +46,4 @@ appsettings.*.json
 
 # Debugging
 .vs/
+.fake

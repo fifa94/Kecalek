@@ -26,7 +26,7 @@ public partial class App : Application
         _communicationService.ConnectionStatusChanged += (isConnected) => {
             if (isConnected) {
                 Console.WriteLine("Připojeno k serveru!");
-                // Zde může být kód pro zahájení komunikace, např. odesílání zpráv.
+                _communicationService.SendMessage("ahoj, vole");
             } else {
                 Console.WriteLine("Odpojeno od serveru!");
                 // Zde může být kód pro zpracování odpojení, např. zobrazení hlášky uživateli.

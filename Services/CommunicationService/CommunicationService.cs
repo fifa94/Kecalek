@@ -64,5 +64,10 @@ namespace Kecalek.Services
             IsConnected = false;
             ConnectionStatusChanged?.Invoke(IsConnected);
         }
+
+        public void SendMessage(string message)
+        {
+            _protocol.SendMessageAsync(message);
+        }
     }
 }
